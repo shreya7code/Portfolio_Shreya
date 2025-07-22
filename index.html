@@ -1,46 +1,354 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Shreya Thakur | Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@600&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
+  <script src="https://kit.fontawesome.com/4e9d46c8a3.js" crossorigin="anonymous"></script>
 </head>
+<script>
+  function scrollToMain() {
+    document.getElementById("about").scrollIntoView({ behavior: "smooth" });
+  }
+
+  function scrollToAbout() {
+    document.getElementById("about").scrollIntoView({ behavior: "smooth" });
+  }
+
+  function scrollToProjects() {
+    document.getElementById("projects").scrollIntoView({ behavior: "smooth" });
+  }
+</script>
+<script>
+const canvas = document.getElementById('animated-bg');
+const ctx = canvas.getContext('2d');
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+let particles = [];
+for (let i = 0; i < 80; i++) {
+  particles.push({
+    x: Math.random() * canvas.width,
+    y: Math.random() * canvas.height,
+    vx: Math.random() * 1.5 - 0.75,
+    vy: Math.random() * 1.5 - 0.75,
+    radius: Math.random() * 2 + 1,
+  });
+}
+
+function draw() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  particles.forEach(p => {
+    ctx.beginPath();
+    ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+    ctx.fillStyle = "#FFD500";
+    ctx.fill();
+
+    p.x += p.vx;
+    p.y += p.vy;
+
+    if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
+    if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
+  });
+  requestAnimationFrame(draw);
+}
+
+draw();
+</script>
+
+
 <body>
-  <header>
-    <h1>Hello, I’m Shreya!</h1>
-    <p>Recent CS grad | AI/ML enthusiast</p>
+  <script>
+  if (location.hash) {
+    location.href = location.href.split("#")[0]; // Remove hash
+  }
+</script>
+
+  <header class="sticky-navbar">
+    <nav>
+      <a href="#about">About</a>
+      <a href="#tech-stack">Skills</a>
+      <a href="#experience">Experience</a>
+      <a href="#education">Education</a>
+      <a href="#projects">Projects</a>
+      <a href="#certifications">Certifications</a>
+      <a href="#contact">Contact</a>
+    </nav>
   </header>
-  <section>
-    <h2>Projects</h2>
-    <ul>
-      <li>🧠 VisionSpeak – Multi-language OCR with summarization</li>
-      <li>📈 Smart Infra Monitor – Real-time anomaly detection dashboard</li>
-    </ul>
+    
+  <section class="home-section">
+    <div class="home-container">
+      <div class="home-left">
+        <h1 class="hero-name">Hi, I’m <span>Shreya Thakur</span></h1>
+        <p class="hero-sub" id="typed-text" aria-label="typing animation"></p>
+        <p class="quirky">Engineer by trade, innovator by heart, and the occasional pun enthusiast 💡</p>
+        <p class="skill-marquee">Python • FastAPI • Docker • SQL • PyTorch • Git • Azure • Java</p>
+
+        <div class="hero-buttons">
+          <a href="assets/resume/Shreya_Thakur_AIML_Engg_6.pdf" target="_blank" class="secondary-btn">Resume</a>
+          
+          <div class="social-inline-icons">
+            <a href="https://github.com/shreya7code" target="_blank" aria-label="GitHub">
+              <img src="assets/icons/github.png" alt="GitHub" class="icon-img" />
+            </a>
+            <a href="https://linkedin.com/in/shreya-thakur7" target="_blank" aria-label="LinkedIn">
+              <img src="assets/icons/Linkedin.png" alt="LinkedIn" class="icon-img" />
+            </a>
+            <a href="mailto:thakurshreya073@gmail.com" aria-label="Email">
+              <img src="assets/icons/email.png" alt="Email" class="icon-img" />
+            </a>
+          </div>
+        </div>
+
+
+
+      </div>
+
+      <div class="home-right">
+        <img src="assets/profile3.png" alt="Shreya's photo" class="profile-pic-small" />
+      </div>
+    </div>  
   </section>
-  <section id="about">
-    <h2>About Me</h2>
-    <p>
-      I'm Shreya Thakur, a Computer Science graduate from the University at Buffalo with a strong passion for AI/ML and building impactful software solutions.
-      I enjoy working at the intersection of backend systems and machine learning, and I’m currently seeking exciting opportunities to contribute to real-world tech products.
-    </p>
+
+
+  <section id="about" class="about-flex">
+    <img src="assets/images/welcome_page.png" alt="Hello!" class="about-animated-img" />  
+    <div class="bio-text">
+      <p>
+        I’m a recent MS in CS graduate from the University at Buffalo, with 3 years of experience at Wipro as a backend developer and cloud ML engineer.
+        My technical stack includes Python, Java, SQL, FastAPI, Azure, and Docker. I specialize in building scalable AI platforms and machine learning pipelines
+        deployed across AWS and Azure ecosystems.
+      </p>
+
+      <p>
+        From production-grade NLP systems and multimodal OCR to AI-powered document retrieval, my work combines engineering precision with user-centered design.
+        I thrive in collaborative environments, bring structure to chaos, and love translating deep learning models into real-world impact.
+      </p>
+
+    </div>
   </section>
-  <section id="resume">
-    <h2>Resume</h2>
-    <a href="your-resume.pdf" target="_blank">View My Resume</a>
+
+  <section id="education">
+    <h2>Education</h2>
+    <div class="education-row">
+      <div class="edu-card">
+        <span class="edu-year">2024 – 2025</span>
+        <img src="assets/icons/ub.jpeg" class="edu-logo" />
+        <h3>University at Buffalo</h3>
+        <p>MS in Computer Science & Engineering (AI/ML track)</p>
+      </div>
+
+      <div class="edu-card">
+        <span class="edu-year">2015 – 2019</span>
+        <img src="assets/icons/makaut.png" class="edu-logo" />
+        <h3>Maulana Abul Kalam Azad University of Technology</h3>
+        <p>B.Tech in Information Technology</p>
+      </div>
+    </div>
   </section>
-  <form name="contact" method="POST" data-netlify="true">
-    <input type="text" name="name" placeholder="Your Name" required><br>
-    <input type="email" name="email" placeholder="Your Email" required><br>
-    <textarea name="message" placeholder="Your Message"></textarea><br>
-    <button type="submit">Send</button>
-  </form>
+
+
+  <section id="experience" class="scroll-section">
+    <h2>Work Experience</h2>
+    <div class="exp-card">
+      <img src="assets/icons/ub.jpeg" class="exp-logo" />
+      <h3>Graduate Teaching Assistant – University at Buffalo</h3>
+      <p class="date">Sep 2024 – Present</p>
+      <ul>
+      <li>Guided 200+ students in Deep Learning concepts including CNNs, Transformers, and distributed training pipelines.</li>
+      <li>Assessed assignments and projects based on model architecture, convergence behavior, and evaluation metrics.</li>
+      <li>Supported student learning through 1:1 mentoring, debugging sessions, and lab walkthroughs.</li>
+      </ul>
+    </div>
+
+    <div class="exp-card">
+      <img src="assets/icons/wipro.png" class="exp-logo" />
+      <h3>Project Engineer – Wipro Ltd.</h3>
+      <p class="date">Aug 2019 – Aug 2022</p>
+      <ul>
+      <li>Developed an NLP-based document retrieval engine for British Petroleum, enabling faster search across 10M+ files using Azure AI Search and ranking optimization.</li>
+      <li>Designed and deployed ML pipelines with metadata enrichment using Azure Cognitive Services and containerized services via Docker and Azure Functions.</li>
+      <li>Implemented feedback loops and fine-tuned transformer models to improve relevance scores by 25%.</li>
+      <li>Built RESTful APIs and responsive UI components (HTML, CSS, JS) for Cisco’s Partner Portal, improving onboarding experience and reducing load time by 40%.</li>
+      <li>Automated regression testing with Java, Selenium, and Cucumber, reducing QA effort by 60% and boosting reliability.</li>
+      <li>Integrated CI/CD workflows using Jenkins and Azure DevOps, cutting deployment time by 35% across multiple services.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="tech-stack" class="scroll-section">
+    <h2>Tech Stack</h2>
+    <div class="tech-icons">
+      <img src="assets/tech_stack_icons/python.jpeg" alt="Python" />
+      <img src="assets/tech_stack_icons/docker.jpeg" alt="Docker" />
+      <img src="assets/tech_stack_icons/sql.png" alt="SQL" />
+      <img src="assets/tech_stack_icons/pytorch.png" alt="PyTorch" />
+      <img src="assets/tech_stack_icons/java.jpeg" alt="Java" />
+      <img src="assets/tech_stack_icons/fastapi.png" alt="FastAPI" />
+      <img src="assets/tech_stack_icons/azure.png" alt="Azure" />
+      <img src="assets/tech_stack_icons/aws.jpeg" alt="AWS" />
+      <img src="assets/tech_stack_icons/postman.png" alt="postman" />
+      <img src="assets/tech_stack_icons/spark.png" alt="spark" />
+    </div>
+  </section>
+
+  <section id="projects" class="scroll-section">
+      <h2>Projects</h2>
+      <div class="project-grid">
+
+        <div class="project-card">
+          <img src="assets/project_icons/visionSpeak.svg" />
+          <h3>🧠 VisionSpeak</h3>
+          <p class="tagline">When your handwriting finds its voice.</p>
+          <p>A multilingual OCR system with summarization and speech output. Combined ResNet-100, CRNN, BiLSTM, and CTC for handwritten text recognition, with FastText for language detection, NLLB for translation, and TTS for accessibility-driven AI experiences.</p>
+          <div class="project-footer-bar">
+            <a href="https://github.com/shreya7code/VisionSpeak_CVIP" target="_blank" aria-label="GitHub">
+              <img src="assets/project_icons/github_project.png" class="footer-icon" alt="GitHub" />
+            </a>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <img src="assets/project_icons/smartInfra.png" />
+          <h3>📊 Smart Infra Monitor</h3>
+          <p class="tagline">Because your infrastructure deserves real-time therapy.</p>
+          <p>Designed a FastAPI-based backend to stream sensor data into InfluxDB (via Kafka) for anomaly detection. Containerized with Docker and deployed on AWS, this observability pipeline is built for scalable diagnostics and future ML integration.</p>
+          <div class="project-footer-bar">
+            <a href="https://github.com/shreya7code/Anomaly_Detection-Smart_Infra_Monitor" target="_blank" aria-label="GitHub">
+              <img src="assets/project_icons/github_project.png" class="footer-icon" alt="GitHub" />
+            </a>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <img src="assets/project_icons/asl.png" />
+          <h3>✋ Gesture to Text</h3>
+          <p class="tagline">Breaking silence, one gesture at a time.</p>
+          <p>A real-time ASL-to-text system using a CNN-ResNet-DenseNet ensemble. Achieved 93% accuracy with webcam input, deployed via Streamlit for instant, interactive translation — helping bridge communication gaps for the speech-impaired.</p>
+          <div class="project-footer-bar">
+            <a href="https://github.com/shreya7code/Sign-Language-Interpretation-Deep-Learning-Model" target="_blank" aria-label="GitHub">
+              <img src="assets/project_icons/github_project.png" class="footer-icon" alt="GitHub" />
+            </a>
+          </div> 
+        </div>
+
+        <div class="project-card">
+          <img src="assets/project_icons/cardioVigilant.jpeg" />
+          <h3>🫀 CardioVigilant</h3>
+          <p class="tagline">Your heart’s early warning system.</p>
+          <p>Trained and compared ML models (ANN, RF, Logistic Regression, KNN) for cardiovascular disease prediction. Achieved 92% accuracy using KNN. Delivered insights through a Flask web app to make medical data more interpretable.</p>
+          <div class="project-footer-bar">
+            <a href="https://github.com/shreya7code/CardioVigilant-ML" target="_blank" aria-label="GitHub">
+              <img src="assets/project_icons/github_project.png" class="footer-icon" alt="GitHub" />
+            </a>
+          </div>          
+        </div>
+        
+      </div>
+  </section>
+
+  <section id="certifications" class="scroll-section">
+    <h2>Certifications</h2>
+    <div class="cert-grid">
+      <div class="cert-card">
+        <a href="https://www.credly.com/badges/2b6ae9a2-992c-468a-812b-881015dd41d6?source=linked_in_profile" target="_blank">AI-900 (Microsoft)</a>
+      </div>
+      <div class="cert-card">
+        <a href="https://onlinecourses.nptel.ac.in/noc21-cs60/preview" target="_blank">DBMS (NPTEL)</a>
+      </div>
+      <div class="cert-card">
+        <a href="https://www.credly.com/badges/d7cce037-19c4-4d3e-91f0-c4c798bd7f91" target="_blank">Python (MTA)</a>
+      </div>
+    </div>
+  </section>
+
+<!-- https://hsriram.netlify.app/ -->
+
   <section id="contact">
-    <h2>Contact</h2>
-    <p>Email: <a href="mailto:shreyathakur@email.com">shreyathakur@email.com</a></p>
-    <p>LinkedIn: <a href="https://linkedin.com/in/shreya..." target="_blank">linkedin.com/in/shreya...</a></p>
+    <h2>Reach out to me</h2>
+    <backquote>My inbox is always open. Whether you have a question or just want to say hi, I’ll try my best to get back to you!</backquote>
+    <div class="contact-social-icons-center">
+      <a href="https://github.com/shreya7code" target="_blank" aria-label="GitHub">
+        <img src="assets/icons/github.png" alt="GitHub" class="contact-icon-img" />
+      </a>
+      <a href="https://linkedin.com/in/shreya-thakur7" target="_blank" aria-label="LinkedIn">
+        <img src="assets/icons/Linkedin.png" alt="LinkedIn" class="contact-icon-img" />
+      </a>
+      <a href="mailto:thakurshreya073@gmail.com" aria-label="Email">
+        <img src="assets/icons/email.png" alt="Email" class="contact-icon-img" />
+      </a>
+    </div>
+    <p>📍 New York, USA</p>
+  
+
+    <div class="contact-quote">
+      <blockquote>“Clean code is cool, but shipped code makes impact.”</blockquote>
+    </div>
+     
   </section>
+
+  <script>
+    const sections = document.querySelectorAll('.scroll-section');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+    sections.forEach(section => observer.observe(section));
+  </script>
+  <script>
+  const phrases = [
+    "Machnine Learning Engineer .",
+    "Cloud Developer .",
+    "AI Enthusiast .",
+    "Dreamer ."
+  ];
+
+  let currentPhrase = 0;
+  let currentChar = 0;
+  const typingSpeed = 100; // milliseconds per character
+  const erasingSpeed = 50;
+  const delayBetweenPhrases = 1000; // pause between words
+
+  const typedText = document.getElementById("typed-text");
+  typedText.textContent = ""; // ensures empty
+  typedText.style.visibility = "visible"; // show only after JS starts
+
+
+  function type() {
+    if (currentChar < phrases[currentPhrase].length) {
+      typedText.textContent += phrases[currentPhrase].charAt(currentChar);
+      currentChar++;
+      setTimeout(type, typingSpeed);
+    } else {
+      setTimeout(erase, delayBetweenPhrases);
+    }
+  }
+
+  function erase() {
+    if (currentChar > 0) {
+      typedText.textContent = phrases[currentPhrase].substring(0, currentChar - 1);
+      currentChar--;
+      setTimeout(erase, erasingSpeed);
+    } else {
+      currentPhrase = (currentPhrase + 1) % phrases.length;
+      setTimeout(type, typingSpeed);
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    setTimeout(type, 500);
+  });
+</script>
+
+
 
 </body>
 </html>
+
+
+

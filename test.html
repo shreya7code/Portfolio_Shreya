@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shreya Thakur | Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> <!-- for icons -->
+</head>
+<body>
+    <div class="welcome-screen">
+    <canvas id="animated-bg"></canvas>
+    <h1 class="bouncy-text">Hi There! I'm Shreya Thakur</h1>
+
+    <div class="welcome-buttons">
+        <button onclick="scrollToMain()">💥 let's roll →</button>
+        <a href="Shreya_Thakur_AIML_Engg_6.pdf" target="_blank" class="resume-button">📄 resume</a>
+    </div>
+    </div>
+    <nav>
+    <button onclick="scrollToAbout()">🤓 know me</button>
+    <button onclick="scrollToProjects()">👀 my work</button>
+    </nav>
+    <section id="about">
+        <img src="profile.jpg" class="profile-pic" alt="Shreya's photo" />
+        <div class="bio">
+            <h2>About Me</h2>
+            <p>Engineer by degree, chaos-curator by nature 💥. I blend deep learning with deeper coffee thoughts. Most recently graduated from UB, currently building cool things with FastAPI, Azure, and occasional sarcasm.</p>
+        </div>
+    </section>
+
+    <section id="experience">
+    <h2>Work Experience</h2>
+
+    <div class="job">
+        <h3>Graduate Teaching Assistant – University at Buffalo</h3>
+        <p class="date">Sep 2024 – Present</p>
+        <ul>
+        <li>Guided 200+ students in Deep Learning concepts including CNNs, Transformers, and distributed training pipelines.</li>
+        <li>Assessed assignments and projects based on model architecture, convergence behavior, and evaluation metrics.</li>
+        <li>Supported student learning through 1:1 mentoring, debugging sessions, and lab walkthroughs.</li>
+        </ul>
+    </div>
+
+    <div class="job">
+        <h3>Project Engineer / Cloud ML Engineer – Wipro Ltd.</h3>
+        <p class="date">Aug 2019 – Aug 2022</p>
+        <ul>
+        <li>Developed an NLP-based document retrieval engine for British Petroleum, enabling faster search across 10M+ files using Azure AI Search and ranking optimization.</li>
+        <li>Designed and deployed ML pipelines with metadata enrichment using Azure Cognitive Services and containerized services via Docker and Azure Functions.</li>
+        <li>Implemented feedback loops and fine-tuned transformer models to improve relevance scores by 25%.</li>
+        <li>Built RESTful APIs and responsive UI components (HTML, CSS, JS) for Cisco’s Partner Portal, improving onboarding experience and reducing load time by 40%.</li>
+        <li>Automated regression testing with Java, Selenium, and Cucumber, reducing QA effort by 60% and boosting reliability.</li>
+        <li>Integrated CI/CD workflows using Jenkins and Azure DevOps, cutting deployment time by 35% across multiple services.</li>
+        </ul>
+    </div>
+    </section>
+
+
+    <section id="projects">
+        <h2>Projects</h2>
+        <div class="project-card">
+            <h3>🧠 VisionSpeak</h3>
+            <p class="tagline">When your handwriting finds its voice.</p>
+            <p>A multilingual OCR system with summarization and speech output. Combined ResNet-100, CRNN, BiLSTM, and CTC for handwritten text recognition, with FastText for language detection, NLLB for translation, and TTS for accessibility-driven AI experiences.</p>
+            <a href="https://github.com/shreya7code/VisionSpeak_CVIP" target="_blank">🔗 View on GitHub</a>
+        </div>
+
+        <div class="project-card">
+            <h3>📊 Smart Infra Monitor</h3>
+            <p class="tagline">Because your infrastructure deserves real-time therapy.</p>
+            <p>Designed a FastAPI-based backend to stream sensor data into InfluxDB (via Kafka) for anomaly detection. Containerized with Docker and deployed on AWS, this observability pipeline is built for scalable diagnostics and future ML integration.</p>
+            <a href="https://github.com/shreya7code/Anomaly_Detection-Smart_Infra_Monitor" target="_blank">🔗 View on GitHub</a>
+        </div>
+
+        <div class="project-card">
+            <h3>✋ Gesture to Text</h3>
+            <p class="tagline">Breaking silence, one gesture at a time.</p>
+            <p>A real-time ASL-to-text system using a CNN-ResNet-DenseNet ensemble. Achieved 93% accuracy with webcam input, deployed via Streamlit for instant, interactive translation — helping bridge communication gaps for the speech-impaired.</p>
+            <a href="https://github.com/shreya7code/Sign-Language-Interpretation-Deep-Learning-Model" target="_blank">🔗 View on GitHub</a>
+        </div>
+
+        <div class="project-card">
+            <h3>🫀 CardioVigilant</h3>
+            <p class="tagline">Your heart’s early warning system.</p>
+            <p>Trained and compared ML models (ANN, RF, Logistic Regression, KNN) for cardiovascular disease prediction. Achieved 92% accuracy using KNN. Delivered insights through a Flask web app to make medical data more interpretable.</p>
+            <a href="https://github.com/shreya7code/CardioVigilant-ML" target="_blank">🔗 View on GitHub</a>
+        </div>
+    </section>
+
+    <div class="skills-grid">
+    <img src="icons/python.svg" alt="Python" />
+    <img src="icons/aws.svg" alt="AWS" />
+    <img src="icons/fastapi.svg" alt="FastAPI" />
+    <img src="icons/docker.svg" alt="Docker" />
+    ...
+    </div>
+
+    <section id="contact">
+    <div class="contact-container">
+        <div class="contact-card">
+        <img src="shreya.jpg" class="contact-photo" alt="Shreya's photo" />
+        <div class="contact-info">
+            <h2>Shreya Thakur</h2>
+            <p><a href="mailto:thakurshreya073@gmail.com">thakurshreya073@gmail.com</a></p>
+            <p>📍 New York, USA</p>
+            <div class="contact-icons">
+            <a href="https://github.com/shreya7code" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://linkedin.com/in/shreya-thakur7" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+        <div class="contact-quote">
+            <blockquote>“Clean code is cool, but shipped code makes impact.”</blockquote>
+        </div>
+        </div>
+    </div>
+    </section>
+</body>
+</html>
+
+
+
